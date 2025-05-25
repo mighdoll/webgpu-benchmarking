@@ -1,5 +1,5 @@
 import { globals, create } from "webgpu";
-import { hostname } from "os";
+import { hostname } from "node:os";
 Object.assign(globalThis, globals);
 const gpuCreateFeatures = [
   "enable-dawn-features=use_user_defined_labels_in_backend",
