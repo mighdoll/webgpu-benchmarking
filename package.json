@@ -1,0 +1,13 @@
+{
+	"name": "webgpu-benchmarking",
+	"type": "module",
+	"private": true,
+  "scripts": {
+    "bench:node": "node benchmarking_node.mjs"
+  },
+	"devDependencies": {
+		"@observablehq/plot": "^0.6.17",
+		"jsdom": "^26.1.0",
+		"webgpu": "^0.2.12"
+	}
+}
