@@ -38,16 +38,18 @@ if (typeof process !== "undefined" && process.release.name === "node") {
 }
 
 // tests
-// import { NoAtomicPKReduceTestSuite } from "./reduce.mjs";
-// import { HierarchicalScanTestSuite } from "./scan.mjs";
+import { NoAtomicPKReduceTestSuite } from "./reduce.mjs";
+import { HierarchicalScanTestSuite } from "./scan.mjs";
 import {
-  // DLDFScanTestSuite,
-  // DLDFReduceTestSuite,
+  DLDFScanTestSuite,
+  DLDFReduceTestSuite,
   DLDFScanAccuracyRegressionSuite,
   DLDFScanMiniSuite,
 } from "./scandldf.mjs";
 import { subgroupAccuracyRegressionSuites } from "./subgroupRegression.mjs";
 import { SortOneSweepRegressionSuite } from "./onesweep.mjs";
+
+main(navigator);
 
 async function main(navigator) {
   const adapter = await navigator.gpu?.requestAdapter();
@@ -99,11 +101,11 @@ async function main(navigator) {
   // HierarchicalScanTestSuite,
   // DLDFScanTestSuite,
   // DLDFReduceTestSuite,
-  //AtomicGlobalU32SGReduceTestSuite,
-  //AtomicGlobalU32WGReduceTestSuite,
-  //AtomicGlobalF32WGReduceTestSuite,
-  //AtomicGlobalNonAtomicWGF32ReduceTestSuite,
-  //AtomicGlobalPrimedNonAtomicWGF32ReduceTestSuite,
+  // AtomicGlobalU32SGReduceTestSuite,
+  // AtomicGlobalU32WGReduceTestSuite,
+  // AtomicGlobalF32WGReduceTestSuite,
+  // AtomicGlobalNonAtomicWGF32ReduceTestSuite,
+  // AtomicGlobalPrimedNonAtomicWGF32ReduceTestSuite,
   // ];
   //const testSuites = [AtomicGlobalU32ReduceTestSuite];
 
@@ -113,7 +115,8 @@ async function main(navigator) {
   //  DLDFScanAccuracyRegressionSuite,
   //  DLDFScanMiniSuite
   //);
-  let testSuites = [DLDFScanMiniSuite];
+  // let testSuites = [DLDFScanMiniSuite];
+  // const testSuites = [NoAtomicPKReduceTestSuite];
 
   const expts = new Array(); // push new rows (experiments) onto this
   let validations = { done: 0, errors: 0 };
